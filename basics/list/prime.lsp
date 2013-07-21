@@ -3,7 +3,7 @@
 
 (defun primep (num)
     (if (equal num 1)
-            (return-from primep t))
+            (return-from primep nil))
     (let ((count 0))
         (dotimes (divoper num)
             (let ((frac (/ num (+ divoper 1))))
