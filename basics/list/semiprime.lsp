@@ -4,15 +4,12 @@
 (print "Finding prime numbers...")
 
 (defun semiprimep (num)
-    (if (equal num 1)
-        (return-from semiprimep nil))
-    (let ((count 0))
-        (dotimes (divoper num)
-            (let ((frac (/ num (+ divoper 1))))
-                (if (integerp frac)
-                    (setf count (+ count 1)))))
-        (if (equal count 2)
-            (return-from semiprimep t))))
+    (cond
+        ((= num 1)
+            (return-from semiprimep t)
+        )
+    )
+)
 
 (let ((count 0))
     (dotimes (i 100)
