@@ -3,7 +3,7 @@
 
 (defun primep (num)
     (if (equal num 1)
-            (return-from primep nil))
+        (return-from primep nil))
     (let ((count 0))
         (dotimes (divoper num)
             (let ((frac (/ num (+ divoper 1))))
@@ -15,8 +15,8 @@
 (let ((count 0))
     (dotimes (i 100)
         (let ((num (+ i 1)))
-                (if (primep num)
-                    (print num)
-                    (setf count (+ count 1)))))
+            (cond
+                ((primep num)
+                    (setf count (+ count 1))
+                    (print num)))))
     (print (format nil "~D prime~:P found." count)))
-
