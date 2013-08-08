@@ -1,7 +1,13 @@
 ; generating random numbers
 
-; 
+; without initializing global state object: always result in the same numbers every time it runs
+(print *random-state*)
+(print (format nil "(random 1000) -> ~d" (random 1000)))
+(print (format nil "(random 1000.0) -> ~d" (random 1000.0)))
+
+; initialize global random state object
 (setf *random-state* (make-random-state t))
+(print *random-state*)
 
 (print (format nil "(random 1000) -> ~d" (random 1000)))
 (print (format nil "(random 1000.0) -> ~d" (random 1000.0)))
